@@ -68,7 +68,7 @@ class Student
   def self.students_below_12th_grade
     sql = "SELECT name FROM students WHERE grade < 12"
     binding.pry
-    DB[:conn].execute(sql)
+    new_from_db(DB[:conn].execute(sql))
   end
 
   def self.first_X_students_in_grade_10(limit)
